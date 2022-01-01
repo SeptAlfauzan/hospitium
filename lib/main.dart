@@ -4,6 +4,7 @@ import 'package:werk/pages/listcontainer.dart';
 import 'package:werk/pages/loading.dart';
 import 'package:werk/pages/searchForm.dart';
 import 'package:werk/pages/details.dart';
+import 'package:werk/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,13 +20,22 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-      ),
-      home: const SearchForm(),
+    return FutureBuilder(
+      future: Init.instance.initialize(),
+      builder: (context, AsyncSnapshot snapshoot) =>
+          snapshoot.connectionState == ConnectionState.waiting
+              ? const MaterialApp(
+                  debugShowCheckedModeBanner: false,
+                  home: Splash(),
+                )
+              : MaterialApp(
+                  debugShowCheckedModeBanner: false,
+                  title: 'Flutter Demo',
+                  theme: ThemeData(
+                    primarySwatch: Colors.blueGrey,
+                  ),
+                  home: const SearchForm(),
+                ),
     );
   }
 }
@@ -91,5 +101,17 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ]));
+  }
+}
+
+class Init {
+  Init._();
+  static final instance = Init._();
+
+  Future initialize() async {
+    // This is where you can initialize the resources needed by your app while
+    // the splash screen is displayed.  Remove the following example because
+    // delaying the user experience is a bad design practice!
+    await Future.delayed(const Duration(seconds: 2));
   }
 }
