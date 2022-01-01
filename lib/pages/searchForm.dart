@@ -42,6 +42,7 @@ class _SearchFormState extends State<SearchForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         color: primaryBg,
         child: Stack(

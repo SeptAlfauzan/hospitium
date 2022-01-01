@@ -33,7 +33,7 @@ class Details extends StatelessWidget {
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30)),
                 ),
-                child: DetailInfo(),
+                child: const DetailInfo(),
               ),
             ),
           ],
@@ -50,31 +50,41 @@ class DetailInfo extends StatelessWidget {
   }
 
   makeCall(BuildContext context) {
-    print('make call');
+    final snackBar =
+        SnackBar(content: const Text('Anda telah mengklik tombol hubungi ✨'));
+
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
+
+  final EdgeInsets _paddingCard = const EdgeInsets.only(left: 30, right: 30);
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      // crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 30, right: 30, top: 40),
-          child: Expanded(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
+        Expanded(
+          flex: 3,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 30),
+              Padding(
+                padding: _paddingCard,
+                child: const Text(
                   'Nama Rumah Sakit blabla',
                   style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w700,
                       fontSize: 18),
                 ),
-                const SizedBox(height: 30),
-                Row(
+              ),
+              const SizedBox(height: 20),
+              Padding(
+                padding: _paddingCard,
+                child: Row(
                   children: [
                     //icon
                     Image.asset(
@@ -95,10 +105,14 @@ class DetailInfo extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
-                const Text(
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const Spacer(),
+              Padding(
+                padding: _paddingCard,
+                child: const Text(
                   'Ruangan khusus pasien COVID',
                   style: TextStyle(
                     fontFamily: 'Poppins',
@@ -106,7 +120,10 @@ class DetailInfo extends StatelessWidget {
                     fontWeight: FontWeight.w300,
                   ),
                 ),
-                const Text(
+              ),
+              Padding(
+                padding: _paddingCard,
+                child: const Text(
                   'Update pada 12-12-2021',
                   style: TextStyle(
                       fontFamily: 'Poppins',
@@ -114,8 +131,12 @@ class DetailInfo extends StatelessWidget {
                       fontWeight: FontWeight.w300,
                       color: Color(0xcff7B7B7B)),
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 0.04),
-                Row(
+              ),
+              // SizedBox(height: MediaQuery.of(context).size.height * 0.02),
+              const Spacer(),
+              Padding(
+                padding: _paddingCard,
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: const [
                     CardDetails(
@@ -126,8 +147,8 @@ class DetailInfo extends StatelessWidget {
                     CardDetails('assets/icons/png/bed 1.png', 12, 'Kosong'),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         Expanded(
@@ -174,7 +195,10 @@ class CardDetails extends StatelessWidget {
     return Expanded(
       child: Container(
         alignment: Alignment.center,
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+        padding: const EdgeInsets.symmetric(
+          vertical: 15,
+          horizontal: 20,
+        ),
         decoration: BoxDecoration(
           border: Border.all(
             color: const Color(0xcFFA0A0A0),

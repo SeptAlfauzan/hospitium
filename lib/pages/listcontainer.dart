@@ -176,7 +176,7 @@ class Card extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Flexible(
-                        flex: 4,
+                        flex: 3,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: const [
@@ -189,6 +189,9 @@ class Card extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                            SizedBox(
+                              height: 10,
+                            ),
                             Text(
                               'Alamat rumah sakit',
                               textAlign: TextAlign.left,
@@ -200,9 +203,6 @@ class Card extends StatelessWidget {
                             ),
                           ],
                         )),
-                    const SizedBox(
-                      width: 20,
-                    ),
                     Flexible(
                       flex: 1,
                       child: Column(
