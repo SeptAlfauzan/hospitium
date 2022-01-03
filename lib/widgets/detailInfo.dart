@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:werk/colors.dart';
-import 'package:werk/widgets/ExpandedCTAButton.dart';
+import 'package:hospitium/colors.dart';
+import 'package:hospitium/widgets/ExpandedCTAButton.dart';
 
 class DetailInfo extends StatelessWidget {
   const DetailInfo({Key? key}) : super(key: key);

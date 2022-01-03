@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
-import 'package:werk/colors.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:werk/widgets/ExpandedCTAButton.dart';
-import 'package:werk/widgets/detailInfo.dart';
+import 'package:hospitium/colors.dart';
+import 'package:hospitium/widgets/detailInfo.dart';
 
 class Details extends StatelessWidget {
   const Details({Key? key}) : super(key: key);

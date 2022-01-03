@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:werk/pages/listcontainer.dart';
-import 'package:werk/pages/loading.dart';
-import 'package:werk/pages/searchForm.dart';
-import 'package:werk/pages/details.dart';
-import 'package:werk/splash.dart';
+import 'package:hospitium/pages/listcontainer.dart';
+import 'package:hospitium/pages/loading.dart';
+import 'package:hospitium/pages/searchForm.dart';
+import 'package:hospitium/pages/details.dart';
+import 'package:hospitium/splash.dart';
 
 void main() {
   runApp(const MyApp());

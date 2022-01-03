@@ -3,10 +3,10 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:werk/colors.dart';
+import 'package:hospitium/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:werk/pages/details.dart';
-import 'package:werk/pages/listcontainer.dart';
+import 'package:hospitium/pages/details.dart';
+import 'package:hospitium/pages/listcontainer.dart';
 
 const String bgPath = 'assets/bg_images/search_form/background_decor.svg';
 const String magGlassPath = 'assets/icons/MagnifyingGlass.svg';

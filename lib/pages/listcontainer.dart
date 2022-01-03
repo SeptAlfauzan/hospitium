@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:werk/pages/details.dart';
-import 'package:werk/pages/loading.dart';
-import 'package:werk/widgets/cardOfList.dart';
-import 'package:werk/widgets/pillButton.dart';
+import 'package:hospitium/pages/details.dart';
+import 'package:hospitium/pages/loading.dart';
+import 'package:hospitium/widgets/cardOfList.dart';
+import 'package:hospitium/widgets/pillButton.dart';
 
 class ListContainer extends StatefulWidget {
   const ListContainer({Key? key}) : super(key: key);
